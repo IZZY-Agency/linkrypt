@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" role="img" aria-label="linkrypt — end-to-end encrypted sharing">
+  <rect width="1280" height="320" rx="20" fill="#0a0b10"/>
+  <rect x="0.5" y="0.5" width="1279" height="319" rx="20" fill="none" stroke="#23252e"/>
+  <text x="72" y="76" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="15" letter-spacing="3" fill="#8a8f98">// LINKRYPT.SH</text>
+  <g transform="translate(72 112) scale(3.6)" fill="#f5c542">
+    <g transform="translate(0 0)">
+      <rect x="0" y="0" width="3" height="6" rx="0.4"/>
+      <rect x="5" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="16" y="0" width="3" height="6" rx="0.4"/>
+      <rect x="21" y="0" width="3" height="6" rx="0.4"/>
+      <text x="12.0" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">L</text>
+    </g>
+    <g transform="translate(32 0)">
+      <rect x="0" y="0" width="3" height="6" rx="0.4"/>
+      <rect x="5" y="0" width="3" height="6" rx="0.4"/>
+      <text x="4.0" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">I</text>
+    </g>
+    <g transform="translate(48 0)">
+      <rect x="0" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="11" y="0" width="3" height="6" rx="0.4"/>
+      <text x="7.0" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">N</text>
+    </g>
+    <g transform="translate(70 0)">
+      <rect x="0" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="11" y="0" width="3" height="6" rx="0.4"/>
+      <rect x="16" y="0" width="9" height="6" rx="0.4"/>
+      <text x="12.5" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">K</text>
+    </g>
+    <g transform="translate(103 0)">
+      <rect x="0" y="0" width="3" height="6" rx="0.4"/>
+      <rect x="5" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="16" y="0" width="3" height="6" rx="0.4"/>
+      <text x="9.5" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">R</text>
+    </g>
+    <g transform="translate(130 0)">
+      <rect x="0" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="11" y="0" width="3" height="6" rx="0.4"/>
+      <rect x="16" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="27" y="0" width="9" height="6" rx="0.4"/>
+      <text x="18.0" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">Y</text>
+    </g>
+    <g transform="translate(174 0)">
+      <rect x="0" y="0" width="3" height="6" rx="0.4"/>
+      <rect x="5" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="16" y="0" width="9" height="6" rx="0.4"/>
+      <rect x="27" y="0" width="3" height="6" rx="0.4"/>
+      <text x="15.0" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">P</text>
+    </g>
+    <g transform="translate(212 0)">
+      <rect x="0" y="0" width="9" height="6" rx="0.4"/>
+      <text x="4.5" y="17" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="6" fill-opacity="0.6">T</text>
+    </g>
+  </g>
+  <text x="72" y="236" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="40" font-weight="700" letter-spacing="-0.5" fill="#dddacf">End-to-end encrypted sharing. By the link.</text>
+  <text x="72" y="274" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace" font-size="17" fill="#bcc1cb">CLI · macOS app · open source (MIT)</text>
+</svg>

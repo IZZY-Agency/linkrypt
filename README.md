@@ -1,3 +1,14 @@
+<p align="center">
+  <a href="https://linkrypt.sh"><img src=".github/linkrypt-banner.svg" alt="linkrypt: end-to-end encrypted sharing, by the link" width="880"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/IZZY-Agency/linkrypt/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/IZZY-Agency/linkrypt/ci.yml?branch=main&amp;label=CI" alt="CI"></a>
+  <a href="https://github.com/IZZY-Agency/linkrypt/releases/latest"><img src="https://img.shields.io/github/v/release/IZZY-Agency/linkrypt?filter=macos-v*&amp;label=macOS%20app&amp;color=f5c542" alt="macOS app release"></a>
+  <a href="https://github.com/IZZY-Agency/linkrypt/releases?q=cli-v&amp;expanded=true"><img src="https://img.shields.io/github/v/release/IZZY-Agency/linkrypt?filter=cli-v*&amp;label=CLI&amp;color=f5c542" alt="CLI release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/IZZY-Agency/linkrypt" alt="MIT license"></a>
+</p>
+
 # Linkrypt
 
 End-to-end-encrypted sharing for text and files: a command-line tool and a

@@ -1,6 +1,42 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "open source" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "code ouvert" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкритий код" } }
+      }
+    },
+    "Linkrypt for macOS is free, open-source software under the MIT license. Read the code, build it yourself, verify the releases." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Linkrypt pour macOS est un logiciel libre et open source sous licence MIT. Lisez le code, compilez-le vous-même, vérifiez les versions publiées." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Linkrypt для macOS — безкоштовне програмне забезпечення з відкритим кодом за ліцензією MIT. Читайте код, збирайте самі, перевіряйте релізи." } }
+      }
+    },
+    "Source on GitHub" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Code source sur GitHub" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Код на GitHub" } }
+      }
+    },
+    "Release notes" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Notes de version" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Примітки до релізу" } }
+      }
+    },
+    "MIT License" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Licence MIT" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Ліцензія MIT" } }
+      }
+    },
+    "Report a vulnerability" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Signaler une vulnérabilité" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Повідомити про вразливість" } }
+      }
+    },
     "Revoke failed — the server refused (403: %@). If your token lacks the shares:revoke scope, mint a new one at /app/tokens." : {
       "localizations" : {
         "fr" : { "stringUnit" : { "state" : "translated", "value" : "Révocation échouée — le serveur a refusé (403 : %@). Si votre jeton n’a pas la permission shares:revoke, créez-en un nouveau sur /app/tokens." } },

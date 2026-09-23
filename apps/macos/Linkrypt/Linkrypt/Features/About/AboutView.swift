@@ -50,6 +50,20 @@ struct AboutView: View {
                 }
             }
 
+            LKPanel(label: "open source", padding: 14) {
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Linkrypt for macOS is free, open-source software under the MIT license. Read the code, build it yourself, verify the releases.")
+                        .font(LK.sans(12)).foregroundStyle(LK.fg)
+                        .fixedSize(horizontal: false, vertical: true)
+                    HStack(spacing: 18) {
+                        link("Source on GitHub", AboutInfo.repositoryURL)
+                        link("Release notes", info.releaseNotesURL)
+                        link("MIT License", AboutInfo.licenseURL)
+                    }
+                    link("Report a vulnerability", AboutInfo.securityReportURL)
+                }
+            }
+
             LKPanel(label: "links", padding: 14) {
                 HStack(spacing: 18) {
                     link("linkrypt.sh", AppModel.defaultBaseURL)

@@ -27,4 +27,16 @@ public struct AboutInfo: Sendable, Equatable {
         guard let build, build != version else { return version }
         return "\(version) (\(build))"
     }
+
+    /// The app is open source; these are the public repository's pages.
+    public static let repositoryURL = "https://github.com/IZZY-Agency/linkrypt"
+    public static let licenseURL = "\(repositoryURL)/blob/main/LICENSE"
+    public static let securityReportURL = "\(repositoryURL)/security/advisories/new"
+
+    /// The GitHub release of exactly this version (tag `macos-v<version>`), or
+    /// the list of releases when the bundle has no version.
+    public var releaseNotesURL: String {
+        guard let version else { return "\(Self.repositoryURL)/releases" }
+        return "\(Self.repositoryURL)/releases/tag/macos-v\(version)"
+    }
 }

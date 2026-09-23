@@ -2,6 +2,12 @@
 
 All notable changes to Linkrypt for macOS. Versions match `MARKETING_VERSION` in `Linkrypt/project.yml`.
 
+## 1.0.1
+
+- About window: a new "open source" section with links to the source on
+  GitHub, this version's release notes, the MIT license and private
+  vulnerability reporting.
+
 ## 1.0.0
 
 - First public release: source at [github.com/IZZY-Agency/linkrypt](https://github.com/IZZY-Agency/linkrypt).

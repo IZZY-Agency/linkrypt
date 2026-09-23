@@ -41,4 +41,19 @@ final class AboutInfoTests: XCTestCase {
         XCTAssertNil(info.version)
         XCTAssertNil(info.copyright)
     }
+
+    // The open-source links point at the public repository; release notes are
+    // the GitHub release of exactly this version (tag macos-v<version>).
+    func testOpenSourceLinks() {
+        XCTAssertEqual(AboutInfo.repositoryURL, "https://github.com/IZZY-Agency/linkrypt")
+        XCTAssertEqual(AboutInfo.licenseURL, "https://github.com/IZZY-Agency/linkrypt/blob/main/LICENSE")
+        XCTAssertEqual(AboutInfo.securityReportURL, "https://github.com/IZZY-Agency/linkrypt/security/advisories/new")
+        XCTAssertEqual(AboutInfo(bundleInfo: full).releaseNotesURL,
+                       "https://github.com/IZZY-Agency/linkrypt/releases/tag/macos-v0.1.0")
+    }
+
+    func testReleaseNotesFallBackToAllReleasesWithoutAVersion() {
+        XCTAssertEqual(AboutInfo(bundleInfo: [:]).releaseNotesURL,
+                       "https://github.com/IZZY-Agency/linkrypt/releases")
+    }
 }

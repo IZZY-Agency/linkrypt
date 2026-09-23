@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Merged into the GENERATE_INFOPLIST_FILE output. -->
+
+	<!-- Register the bundled JetBrains Mono fonts (Contents/Resources/*.ttf, used
+	     via Font.custom("JetBrains Mono")). "." = the bundle Resources root, where
+	     the .ttf files land. (Previously a plain `ATSApplicationFontsPath` build
+	     setting in project.yml, which never reached the generated plist — a no-op,
+	     so the custom font wasn't registering.) -->
+	<key>ATSApplicationFontsPath</key>
+	<string>.</string>
+
+	<!-- Read by the About window (LinkryptCore.AboutInfo), Finder "Get Info"
+	     and the stock About panel. -->
+	<key>NSHumanReadableCopyright</key>
+	<string>© 2026 IZZY Agency</string>
+
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleLocalizations</key>
+	<array>
+		<string>en</string>
+		<string>fr</string>
+		<string>uk</string>
+	</array>
+
+	<!-- Lets Linkrypt accept explicit file-open events (dock drop / Finder
+	     "Open With" / drag-to-app) as a Viewer at Alternate rank — never the
+	     default opener for any type. -->
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeName</key>
+			<string>Any file</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>public.data</string>
+			</array>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>LSHandlerRank</key>
+			<string>Alternate</string>
+		</dict>
+	</array>
+</dict>
+</plist>

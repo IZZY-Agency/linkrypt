@@ -1,0 +1,57 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  cli:
+    name: CLI (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-26]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: cli
+      - name: Format
+        run: cargo fmt --manifest-path cli/Cargo.toml --check
+      - name: Clippy
+        run: cargo clippy --manifest-path cli/Cargo.toml --all-targets -- -D warnings
+      - name: Test
+        run: cargo test --manifest-path cli/Cargo.toml
+
+  macos:
+    name: macOS app
+    runs-on: macos-26
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v6
+      - name: Select the newest Xcode on the runner
+        run: |
+          xcode="$(ls -d /Applications/Xcode*.app | sort -V | tail -1)"
+          echo "DEVELOPER_DIR=$xcode/Contents/Developer" >> "$GITHUB_ENV"
+          "$xcode/Contents/Developer/usr/bin/xcodebuild" -version
+      - name: LinkryptCore tests
+        working-directory: apps/macos/LinkryptCore
+        run: swift test
+      - name: Localization completeness
+        run: node apps/macos/scripts/check-localization.mjs
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Build the app (unsigned)
+        working-directory: apps/macos/Linkrypt
+        run: |
+          xcodegen generate
+          xcodebuild -project Linkrypt.xcodeproj -scheme Linkrypt -configuration Release \
+            -destination 'platform=macOS' CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM= build

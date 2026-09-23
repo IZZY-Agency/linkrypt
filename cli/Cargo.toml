@@ -1,0 +1,48 @@
+[package]
+name = "linkrypt-cli"
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.89"
+description = "CLI for the linkrypt end-to-end-encrypted share service"
+license = "MIT"
+repository = "https://github.com/IZZY-Agency/linkrypt"
+homepage = "https://linkrypt.sh"
+
+[[bin]]
+name = "linkrypt"
+path = "src/main.rs"
+
+[lib]
+name = "linkrypt_cli"
+path = "src/lib.rs"
+
+[dependencies]
+clap        = { version = "4",    features = ["derive", "env"] }
+ureq        = { version = "3",    features = ["json"] }  # rustls TLS is a default feature
+serde       = { version = "1",    features = ["derive"] }
+serde_json  = "1"
+aes-gcm     = "0.11"
+pbkdf2      = { version = "0.13", features = ["sha2"] }
+sha2        = "0.11"
+rand        = "0.10"
+base64      = "0.22"          # ureq's own stack uses 0.23, so both lines appear in Cargo.lock
+rpassword   = "7.5.3"
+directories = "6"
+anyhow      = "1"
+thiserror   = "2"
+owo-colors  = "4"
+indicatif   = "0.18"
+url         = "2"            # exact host parse for the localhost check
+urlencoding = "2"            # share id path encoding
+chrono      = "0.4"          # ISO timestamp for --json expiresAt
+
+[dev-dependencies]
+mockito     = "1"            # HTTP fake for command-level integration tests
+tempfile    = "3"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"

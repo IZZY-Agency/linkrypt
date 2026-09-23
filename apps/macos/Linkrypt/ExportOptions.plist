@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Used by apps/macos/scripts/release.sh (xcodebuild -exportArchive).
+	     Direct distribution outside the Mac App Store: Developer ID, manual
+	     signing, exported locally. Notarization is a separate script step
+	     (notarytool), so nothing is uploaded here. The app is unsandboxed
+	     and uses no profile-gated capability, so no provisioning profile. -->
+	<key>method</key>
+	<string>developer-id</string>
+	<key>destination</key>
+	<string>export</string>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>signingCertificate</key>
+	<string>Developer ID Application</string>
+	<key>teamID</key>
+	<string>VHZR49D9QB</string>
+</dict>
+</plist>

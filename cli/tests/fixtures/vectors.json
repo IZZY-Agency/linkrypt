@@ -1,0 +1,35 @@
+[
+  {
+    "name": "aes_zero_hello",
+    "key": "0000000000000000000000000000000000000000000000000000000000000000",
+    "iv": "000000000000000000000000",
+    "pt": "68656c6c6f",
+    "ct": "a6c22c51228b908f7f62ffcea6a92fabef39bf4d93"
+  },
+  {
+    "name": "aes_random_phrase",
+    "key": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+    "iv": "101112131415161718191a1b",
+    "pt": "746865207261696e20696e20737061696e2066616c6c73206d61696e6c79206f6e2074686520706c61696e",
+    "ct": "b350a6821ef946cd66d823f5e284a74c465d2b06514e7d5af01fea875e2e1326941f2714c62c0fea52259b89162d419ac159e4f886e421b2da4291"
+  },
+  {
+    "name": "aes_empty",
+    "key": "0000000000000000000000000000000000000000000000000000000000000000",
+    "iv": "000000000000000000000000",
+    "pt": "",
+    "ct": "530f8afbc74536b9a963b4f1c4cb738b"
+  },
+  {
+    "name": "pbkdf2_chbs",
+    "passphrase": "correct horse battery staple",
+    "salt": "0102030405060708090a0b0c0d0e0f10",
+    "out": "0008e69b89ffac1aa7bb1f44289ba65afaa711dd450f0aab6c322e4cd57bb216"
+  },
+  {
+    "name": "pbkdf2_unicode",
+    "passphrase": "café 🦀 password",
+    "salt": "a1a2a3a4a5a6a7a8a9aaabacadaeafb0",
+    "out": "46d751295fd998b0c94d857b87b46d26d611b606699e92620b66e9436625eae9"
+  }
+]

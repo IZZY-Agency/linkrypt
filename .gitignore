@@ -1,0 +1,9 @@
+.DS_Store
+cli/target/
+cli/dist/
+.build/
+apps/macos/**/.build/
+apps/macos/**/build/
+*.xcuserstate
+apps/macos/**/xcuserdata/
+dist/

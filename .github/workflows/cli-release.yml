@@ -1,0 +1,119 @@
+name: CLI release
+
+# On a cli-v* tag: build the Linux and Windows archives from this commit and
+# attach them to a DRAFT release. The two macOS archives are built from the
+# same tag on a Mac, Developer ID-signed and notarized, then uploaded before
+# the draft is published.
+on:
+  push:
+    tags: ['cli-v*']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: x86_64-unknown-linux-musl
+            runner: ubuntu-latest
+            archive: tar.gz
+            extra_setup: 'sudo apt-get update && sudo apt-get install -y musl-tools'
+            strip_cmd: 'strip'
+          - target: x86_64-unknown-linux-gnu
+            runner: ubuntu-latest
+            archive: tar.gz
+            extra_setup: ''
+            strip_cmd: 'strip'
+          - target: aarch64-unknown-linux-musl
+            runner: ubuntu-24.04-arm
+            archive: tar.gz
+            extra_setup: 'sudo apt-get update && sudo apt-get install -y musl-tools'
+            strip_cmd: 'strip'
+          - target: x86_64-pc-windows-msvc
+            runner: windows-latest
+            archive: zip
+            extra_setup: ''
+            strip_cmd: ''
+          - target: aarch64-pc-windows-msvc
+            runner: windows-11-arm
+            archive: zip
+            extra_setup: ''
+            strip_cmd: ''
+    runs-on: ${{ matrix.runner }}
+    env:
+      BIN_NAME: linkrypt
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: tag matches the crate version
+        shell: bash
+        run: |
+          version="$(sed -nE 's/^version = "([^"]+)"$/\1/p' cli/Cargo.toml | head -1)"
+          [ "cli-v$version" = "$GITHUB_REF_NAME" ] || { echo "tag $GITHUB_REF_NAME != cli/Cargo.toml $version"; exit 1; }
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.target }}
+
+      - name: extra setup
+        if: matrix.extra_setup != ''
+        shell: bash
+        run: ${{ matrix.extra_setup }}
+
+      - name: build
+        shell: bash
+        run: cargo build --release --locked --manifest-path cli/Cargo.toml --target ${{ matrix.target }}
+
+      - name: strip
+        if: matrix.strip_cmd != ''
+        shell: bash
+        run: ${{ matrix.strip_cmd }} "cli/target/${{ matrix.target }}/release/${BIN_NAME}"
+
+      - name: smoke
+        shell: bash
+        run: |
+          bin="cli/target/${{ matrix.target }}/release/${BIN_NAME}"
+          [ "${{ matrix.archive }}" = zip ] && bin="$bin.exe"
+          "$bin" --version
+
+      - name: package (Unix)
+        if: matrix.archive == 'tar.gz'
+        shell: bash
+        run: bash scripts/package-cli.sh "${{ matrix.target }}"
+
+      - name: package (Windows)
+        if: matrix.archive == 'zip'
+        shell: pwsh
+        run: scripts/package-cli.ps1 -Target "${{ matrix.target }}"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: ${{ env.BIN_NAME }}-${{ matrix.target }}
+          path: |
+            ${{ env.BIN_NAME }}-${{ matrix.target }}.${{ matrix.archive }}
+            ${{ env.BIN_NAME }}-${{ matrix.target }}.${{ matrix.archive }}.sha256
+          if-no-files-found: error
+          retention-days: 7
+
+  draft:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          path: artifacts
+          merge-multiple: true
+      - run: ls -la artifacts/
+      - uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Linkrypt CLI ${{ github.ref_name }}
+          draft: true
+          make_latest: false
+          files: artifacts/*
+          fail_on_unmatched_files: true

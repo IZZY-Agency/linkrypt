@@ -1,0 +1,1530 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Revoke failed — the server refused (403: %@). If your token lacks the shares:revoke scope, mint a new one at /app/tokens." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Révocation échouée — le serveur a refusé (403 : %@). Si votre jeton n’a pas la permission shares:revoke, créez-en un nouveau sur /app/tokens." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Не вдалося відкликати — сервер відмовив (403: %@). Якщо ваш токен не має права shares:revoke, створіть новий на /app/tokens." } }
+      }
+    },
+    "Revoke failed — token is missing scope(s): %@. Mint a token with revoke permission at /app/tokens." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Révocation échouée — il manque au jeton la ou les permissions : %@. Créez un jeton avec la permission de révocation sur /app/tokens." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Не вдалося відкликати — токену бракує прав: %@. Створіть токен із правом відкликання на /app/tokens." } }
+      }
+    },
+    "Revoke failed — token rejected (401). Sign in again." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Révocation échouée — jeton rejeté (401). Reconnectez-vous." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Не вдалося відкликати — токен відхилено (401). Увійдіть знову." } }
+      }
+    },
+    "Revoke failed — server error %lld: %@" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Révocation échouée — erreur serveur %lld : %@" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Не вдалося відкликати — помилка сервера %lld: %@" } }
+      }
+    },
+    "Revoke failed: %@" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Révocation échouée : %@" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Не вдалося відкликати: %@" } }
+      }
+    },
+    "revoked %@" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "révoqué %@" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкликано %@" } }
+      }
+    },
+    "revoking…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "révocation…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкликання…" } }
+      }
+    },
+    "✓ revoked — the link no longer opens" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "✓ révoqué — le lien ne s’ouvre plus" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "✓ відкликано — посилання більше не відкривається" } }
+      }
+    },
+    "The open is spent — the file is decrypted in memory until you save it." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "L’ouverture est consommée — le fichier reste déchiffré en mémoire jusqu’à ce que vous l’enregistriez." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Відкриття використано — файл лишається розшифрованим у пам’яті, доки ви його не збережете." } }
+      }
+    },
+    "Save file…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Enregistrer le fichier…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Зберегти файл…" } }
+      }
+    },
+    "Pro plan" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Forfait Pro" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "План Pro" } }
+      }
+    },
+    "%lld active" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld actifs" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld активних" } }
+      }
+    },
+    "%lld opened" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld ouverts" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld відкритих" } }
+      }
+    },
+    "%lld closed" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld fermés" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld закритих" } }
+      }
+    },
+    "%lld pending" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld en attente" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld в очікуванні" } }
+      }
+    },
+    "%lld submitted" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld envoyés" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld надісланих" } }
+      }
+    },
+    "%lld shown" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld affichés" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld показано" } }
+      }
+    },
+    "%lld opens remaining" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld ouvertures restantes" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld відкриттів залишилось" } }
+      }
+    },
+    "select a request first (j/k)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "sélectionnez d’abord une demande (j/k)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "спершу оберіть запит (j/k)" } }
+      }
+    },
+    "// ACTIVE SHARES" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// PARTAGES ACTIFS" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// АКТИВНІ НАДСИЛАННЯ" } }
+      }
+    },
+    "// ANSWER A REQUEST" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// RÉPONDRE À UNE DEMANDE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// ВІДПОВІСТИ НА ЗАПИТ" } }
+      }
+    },
+    "// COMPOSE SHARE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// COMPOSER UN PARTAGE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// СТВОРИТИ НАДСИЛАННЯ" } }
+      }
+    },
+    "// OPEN A SHARE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// OUVRIR UN PARTAGE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// ВІДКРИТИ НАДСИЛАННЯ" } }
+      }
+    },
+    "// REQUEST A SECRET" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// DEMANDER UN SECRET" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// ЗАПИТАТИ СЕКРЕТ" } }
+      }
+    },
+    "// REQUEST INBOX" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// BOÎTE DE DEMANDES" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// ВХІДНІ ЗАПИТІВ" } }
+      }
+    },
+    "// REQUEST LINKS" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// LIENS DE DEMANDE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// ПОСИЛАННЯ-ЗАПИТИ" } }
+      }
+    },
+    "// SETTINGS" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// RÉGLAGES" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// НАЛАШТУВАННЯ" } }
+      }
+    },
+    "// ZERO-KNOWLEDGE SHARE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// PARTAGE ZÉRO CONNAISSANCE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// НАДСИЛАННЯ З НУЛЬОВИМ РОЗГОЛОШЕННЯМ" } }
+      }
+    },
+    "// locked" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// verrouillé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// заблоковано" } }
+      }
+    },
+    "// paste to share" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// coller pour partager" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// вставити та надіслати" } }
+      }
+    },
+    "// recent" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "// récents" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "// нещодавні" } }
+      }
+    },
+    "WORKSPACE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ESPACE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "РОБОЧА ОБЛАСТЬ" } }
+      }
+    },
+    "OUTGOING" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "SORTANT" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ВИХІДНІ" } }
+      }
+    },
+    "INCOMING" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ENTRANT" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ВХІДНІ" } }
+      }
+    },
+    "ACCOUNT" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "COMPTE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ОБЛІКОВИЙ ЗАПИС" } }
+      }
+    },
+    "Shares" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Partages" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надсилання" } }
+      }
+    },
+    "Requests" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Demandes" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Запити" } }
+      }
+    },
+    "New share" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Nouveau partage" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Нове надсилання" } }
+      }
+    },
+    "New request" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Nouvelle demande" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Новий запит" } }
+      }
+    },
+    "Open a share" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ouvrir un partage" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Відкрити надсилання" } }
+      }
+    },
+    "Answer a request" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Répondre à une demande" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Відповісти на запит" } }
+      }
+    },
+    "Request inbox" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Boîte de demandes" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Вхідні запитів" } }
+      }
+    },
+    "Audit log" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Journal d’audit" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Журнал аудиту" } }
+      }
+    },
+    "API tokens" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Jetons API" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Токени API" } }
+      }
+    },
+    "logout" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "déconnexion" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "вийти" } }
+      }
+    },
+    "linkrypt" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "linkrypt" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "linkrypt" } }
+      }
+    },
+    "● OFFLINE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "● HORS LIGNE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "● ОФЛАЙН" } }
+      }
+    },
+    "● ONLINE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "● EN LIGNE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "● ОНЛАЙН" } }
+      }
+    },
+    "Locked — open the app to unlock" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Verrouillé — ouvrez l’app pour déverrouiller" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Заблоковано — відкрийте застосунок, щоб розблокувати" } }
+      }
+    },
+    "Encrypting…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chiffrement…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Шифрування…" } }
+      }
+    },
+    "Encrypt clipboard now" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chiffrer le presse-papiers" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Зашифрувати буфер обміну" } }
+      }
+    },
+    "Sign in from the main window." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Connectez-vous depuis la fenêtre principale." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Увійдіть із головного вікна." } }
+      }
+    },
+    "No shares yet." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun partage pour l’instant." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надсилань ще немає." } }
+      }
+    },
+    "dashboard" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "tableau de bord" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "панель" } }
+      }
+    },
+    "refresh" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "actualiser" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "оновити" } }
+      }
+    },
+    "quit ⌘Q" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "quitter ⌘Q" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "вийти ⌘Q" } }
+      }
+    },
+    "✓ link copied to clipboard" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "✓ lien copié dans le presse-papiers" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "✓ посилання скопійовано в буфер" } }
+      }
+    },
+    "Link only available on the device that created it" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lien disponible uniquement sur l’appareil qui l’a créé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання доступне лише на пристрої, що його створив" } }
+      }
+    },
+    "Copy link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Copier le lien" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Копіювати посилання" } }
+      }
+    },
+    "ID" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ID" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ID" } }
+      }
+    },
+    "LABEL" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ÉTIQUETTE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "НАЗВА" } }
+      }
+    },
+    "OPENS" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "OUVERTURES" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ВІДКРИТТЯ" } }
+      }
+    },
+    "EXPIRES" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "EXPIRE" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ЗАКІНЧУЄТЬСЯ" } }
+      }
+    },
+    "STATE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ÉTAT" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "СТАН" } }
+      }
+    },
+    "USED" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "UTILISÉ" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ВИКОРИСТАНО" } }
+      }
+    },
+    "⟳ sync" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "⟳ synchroniser" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "⟳ синхронізувати" } }
+      }
+    },
+    "+ new share" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "+ nouveau partage" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "+ нове надсилання" } }
+      }
+    },
+    "+ new request" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "+ nouvelle demande" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "+ новий запит" } }
+      }
+    },
+    "No shares yet. Create one with [ + new share ]." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun partage pour l’instant. Créez-en un avec [ + nouveau partage ]." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надсилань ще немає. Створіть за допомогою [ + нове надсилання ]." } }
+      }
+    },
+    "No shares match this filter." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun partage ne correspond à ce filtre." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Жодне надсилання не відповідає цьому фільтру." } }
+      }
+    },
+    "No request links yet. Create one with [ + new request ]." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucun lien de demande pour l’instant. Créez-en un avec [ + nouvelle demande ]." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилань-запитів ще немає. Створіть за допомогою [ + новий запит ]." } }
+      }
+    },
+    "No requests match this filter." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Aucune demande ne correspond à ce filtre." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Жоден запит не відповідає цьому фільтру." } }
+      }
+    },
+    "revoke? d ✓ · esc ✕" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "révoquer ? d ✓ · échap ✕" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкликати? d ✓ · esc ✕" } }
+      }
+    },
+    "copied link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "lien copié" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "посилання скопійовано" } }
+      }
+    },
+    "no link on this device" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "aucun lien sur cet appareil" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "немає посилання на цьому пристрої" } }
+      }
+    },
+    "select a share first (j/k)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "sélectionnez d’abord un partage (j/k)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "спершу оберіть надсилання (j/k)" } }
+      }
+    },
+    "Link only available right after creation, on the device that created it" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lien disponible uniquement juste après sa création, sur l’appareil qui l’a créé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання доступне лише одразу після створення, на пристрої, що його створив" } }
+      }
+    },
+    "Copy the request link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Copier le lien de demande" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Копіювати посилання-запит" } }
+      }
+    },
+    "Encrypt & share" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Chiffrer et partager" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Зашифрувати та надіслати" } }
+      }
+    },
+    "text" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "texte" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "текст" } }
+      }
+    },
+    "file" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "fichier" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файл" } }
+      }
+    },
+    "Secret · plaintext" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Secret · texte clair" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Секрет · відкритий текст" } }
+      }
+    },
+    "load file…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "charger un fichier…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "завантажити файл…" } }
+      }
+    },
+    "File · encrypted on device" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Fichier · chiffré sur l’appareil" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Файл · зашифровано на пристрої" } }
+      }
+    },
+    "no file chosen" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "aucun fichier choisi" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файл не обрано" } }
+      }
+    },
+    "choose…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "choisir…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "обрати…" } }
+      }
+    },
+    "Label · sent to recipient" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Étiquette · envoyée au destinataire" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Назва · надсилається отримувачу" } }
+      }
+    },
+    "optional" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "facultatif" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "необов’язково" } }
+      }
+    },
+    "Expires" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Expire" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Закінчується" } }
+      }
+    },
+    "1 hour" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "1 heure" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "1 година" } }
+      }
+    },
+    "24 hours" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "24 heures" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "24 години" } }
+      }
+    },
+    "7 days" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "7 jours" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "7 днів" } }
+      }
+    },
+    "30 days" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "30 jours" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "30 днів" } }
+      }
+    },
+    "Max opens" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ouvertures max" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Макс. відкриттів" } }
+      }
+    },
+    "1 then burn" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "1 puis détruire" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "1, потім знищити" } }
+      }
+    },
+    "2" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "2" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "2" } }
+      }
+    },
+    "3" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "3" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "3" } }
+      }
+    },
+    "4" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "4" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "4" } }
+      }
+    },
+    "5" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "5" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "5" } }
+      }
+    },
+    "10" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "10" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "10" } }
+      }
+    },
+    "25" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "25" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "25" } }
+      }
+    },
+    "50" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "50" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "50" } }
+      }
+    },
+    "100" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "100" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "100" } }
+      }
+    },
+    "Passphrase 2FA" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Phrase secrète 2FA" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Парольна фраза 2FA" } }
+      }
+    },
+    "Argon2id · 64 MiB" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Argon2id · 64 Mio" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Argon2id · 64 МіБ" } }
+      }
+    },
+    "Email the link to a recipient" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Envoyer le lien par e-mail à un destinataire" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надіслати посилання отримувачу електронною поштою" } }
+      }
+    },
+    "delivered via the server (not zero-knowledge)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "transmis via le serveur (pas zéro connaissance)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "доставляється через сервер (не нульове розголошення)" } }
+      }
+    },
+    "Notify me on open" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "M’avertir à l’ouverture" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Сповістити мене при відкритті" } }
+      }
+    },
+    "push when the share is read" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "notification quand le partage est lu" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "сповіщення, коли надсилання прочитано" } }
+      }
+    },
+    "key never leaves this device" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "la clé ne quitte jamais cet appareil" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ключ ніколи не залишає цей пристрій" } }
+      }
+    },
+    "cancel" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "annuler" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "скасувати" } }
+      }
+    },
+    "sealing…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "scellement…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "запечатування…" } }
+      }
+    },
+    "encrypt & share" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "chiffrer et partager" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "зашифрувати та надіслати" } }
+      }
+    },
+    "active" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "actif" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "активний" } }
+      }
+    },
+    "opened" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ouvert" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкрито" } }
+      }
+    },
+    "burned" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "détruit" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "знищено" } }
+      }
+    },
+    "expired" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "expiré" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "застарів" } }
+      }
+    },
+    "revoked" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "révoqué" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкликано" } }
+      }
+    },
+    "pending" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "en attente" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "очікує" } }
+      }
+    },
+    "submitted" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "envoyé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "надіслано" } }
+      }
+    },
+    "new" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "nouveau" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "новий" } }
+      }
+    },
+    "Clipboard" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Presse-papiers" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Буфер обміну" } }
+      }
+    },
+    "Burn copied links" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Détruire les liens copiés" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Знищувати скопійовані посилання" } }
+      }
+    },
+    "clear the clipboard after a delay (best-effort, while the app runs)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "vider le presse-papiers après un délai (au mieux, tant que l’app tourne)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "очищати буфер обміну за деякий час (за можливості, поки застосунок працює)" } }
+      }
+    },
+    "after 30s" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "après 30 s" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "за 30 с" } }
+      }
+    },
+    "after 60s" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "après 60 s" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "за 60 с" } }
+      }
+    },
+    "after 2 min" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "après 2 min" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "за 2 хв" } }
+      }
+    },
+    "Doesn't recall links already read by a clipboard manager or iCloud Universal Clipboard." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ne rappelle pas les liens déjà lus par un gestionnaire de presse-papiers ou le presse-papiers universel iCloud." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Не відкликає посилання, уже прочитані менеджером буфера обміну чи універсальним буфером iCloud." } }
+      }
+    },
+    "Links" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Liens" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання" } }
+      }
+    },
+    "Persist links across launches" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Conserver les liens entre les lancements" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Зберігати посилання між запусками" } }
+      }
+    },
+    "store copy-links in the Keychain so they survive a relaunch" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "stocker les liens dans le trousseau pour qu’ils survivent à un redémarrage" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "зберігати посилання у Keychain, щоб вони пережили перезапуск" } }
+      }
+    },
+    "Clear cached links now" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Effacer les liens en cache maintenant" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Очистити кешовані посилання зараз" } }
+      }
+    },
+    "While off, cached links are kept only for this session and lost on quit — they can't be recovered from the server." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lorsque désactivé, les liens en cache ne sont conservés que pour cette session et perdus à la fermeture — ils ne peuvent pas être récupérés depuis le serveur." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Коли вимкнено, кешовані посилання зберігаються лише на цю сесію й губляться при виході — їх не можна відновити із сервера." } }
+      }
+    },
+    "Security" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Sécurité" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Безпека" } }
+      }
+    },
+    "Require Touch ID" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Exiger Touch ID" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Вимагати Touch ID" } }
+      }
+    },
+    "lock the app; unlock with Touch ID or your Mac password" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "verrouiller l’app ; déverrouiller avec Touch ID ou le mot de passe de votre Mac" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "блокувати застосунок; розблоковувати через Touch ID або пароль Mac" } }
+      }
+    },
+    "lock when I switch away" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "verrouiller quand je change d’app" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "блокувати, коли я перемикаюся" } }
+      }
+    },
+    "after 1 min away" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "après 1 min d’absence" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "за 1 хв відсутності" } }
+      }
+    },
+    "after 5 min away" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "après 5 min d’absence" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "за 5 хв відсутності" } }
+      }
+    },
+    "after 15 min away" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "après 15 min d’absence" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "за 15 хв відсутності" } }
+      }
+    },
+    "Language" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Langue" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Мова" } }
+      }
+    },
+    "System" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Système" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Системна" } }
+      }
+    },
+    "Switches the app language immediately. System surfaces update on next launch." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Change immédiatement la langue de l’app. Les surfaces système se mettent à jour au prochain lancement." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Миттєво змінює мову застосунку. Системні елементи оновляться при наступному запуску." } }
+      }
+    },
+    "Clear all cached links?" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Effacer tous les liens en cache ?" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Очистити всі кешовані посилання?" } }
+      }
+    },
+    "Clear" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Effacer" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Очистити" } }
+      }
+    },
+    "Removes every copy-link from this device. They can't be recovered." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Supprime tous les liens copiés de cet appareil. Ils ne peuvent pas être récupérés." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Видаляє всі скопійовані посилання з цього пристрою. Їх не можна відновити." } }
+      }
+    },
+    "Paste an API token to sign in." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Collez un jeton API pour vous connecter." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Вставте токен API, щоб увійти." } }
+      }
+    },
+    "No passwords. We never see your shares — the key never leaves this device." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Pas de mots de passe. Nous ne voyons jamais vos partages — la clé ne quitte jamais cet appareil." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Жодних паролів. Ми ніколи не бачимо ваших надсилань — ключ ніколи не залишає цей пристрій." } }
+      }
+    },
+    "API token" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Jeton API" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Токен API" } }
+      }
+    },
+    "paste token from /app/tokens" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "collez le jeton depuis /app/tokens" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "вставте токен з /app/tokens" } }
+      }
+    },
+    "mint a token at /app/tokens" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "générez un jeton sur /app/tokens" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "створіть токен на /app/tokens" } }
+      }
+    },
+    "validating…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "validation…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "перевірка…" } }
+      }
+    },
+    "sign in" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "se connecter" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "увійти" } }
+      }
+    },
+    "Linkrypt is locked" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Linkrypt est verrouillé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Linkrypt заблоковано" } }
+      }
+    },
+    "Unlock with Touch ID or your Mac password" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Déverrouillez avec Touch ID ou le mot de passe de votre Mac" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Розблокуйте через Touch ID або пароль Mac" } }
+      }
+    },
+    "authenticating…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "authentification…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "автентифікація…" } }
+      }
+    },
+    "Unlock" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Déverrouiller" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Розблокувати" } }
+      }
+    },
+    "Read a submission" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lire un envoi" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Прочитати надходження" } }
+      }
+    },
+    "Inbox link · from your email" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lien de boîte de réception · depuis votre e-mail" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання на вхідні · з вашого листа" } }
+      }
+    },
+    "Opening decrypts the submission locally and burns it on the server." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "L’ouverture déchiffre l’envoi localement et le détruit sur le serveur." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Відкриття розшифровує надходження локально та знищує його на сервері." } }
+      }
+    },
+    "Submission · destroyed on the server" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Envoi · détruit sur le serveur" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надходження · знищено на сервері" } }
+      }
+    },
+    "copy" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "copier" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "копіювати" } }
+      }
+    },
+    "close" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "fermer" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "закрити" } }
+      }
+    },
+    "opening…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ouverture…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкриття…" } }
+      }
+    },
+    "open" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ouvrir" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкрити" } }
+      }
+    },
+    "Open a secure link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Ouvrir un lien sécurisé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Відкрити захищене посилання" } }
+      }
+    },
+    "Linkrypt link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lien Linkrypt" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання Linkrypt" } }
+      }
+    },
+    "⚠ Opening consumes one of the share's opens — it may burn after this." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "⚠ L’ouverture consomme une des ouvertures du partage — il peut être détruit après cela." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "⚠ Відкриття витрачає одне з відкриттів надсилання — після цього воно може знищитися." } }
+      }
+    },
+    "passphrase" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "phrase secrète" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "парольна фраза" } }
+      }
+    },
+    "Secret · decrypted on device" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Secret · déchiffré sur l’appareil" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Секрет · розшифровано на пристрої" } }
+      }
+    },
+    "unlocking…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "déverrouillage…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "розблокування…" } }
+      }
+    },
+    "unlock" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "déverrouiller" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "розблокувати" } }
+      }
+    },
+    "Send an encrypted reply" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Envoyer une réponse chiffrée" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надіслати зашифровану відповідь" } }
+      }
+    },
+    "Request link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lien de demande" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання-запит" } }
+      }
+    },
+    "load" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "charger" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "завантажити" } }
+      }
+    },
+    "Secret · plaintext (or pick a file)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Secret · texte clair (ou choisissez un fichier)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Секрет · відкритий текст (або оберіть файл)" } }
+      }
+    },
+    "pick file…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "choisir un fichier…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "обрати файл…" } }
+      }
+    },
+    "sending…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "envoi…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "надсилання…" } }
+      }
+    },
+    "encrypt & send" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "chiffrer et envoyer" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "зашифрувати та надіслати" } }
+      }
+    },
+    "encrypted on this device" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "chiffré sur cet appareil" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "зашифровано на цьому пристрої" } }
+      }
+    },
+    "✓ sent — the owner has been emailed." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "✓ envoyé — le propriétaire a été averti par e-mail." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "✓ надіслано — власнику надіслано листа." } }
+      }
+    },
+    "Request a secret" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Demander un secret" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Запитати секрет" } }
+      }
+    },
+    "Request link ready" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lien de demande prêt" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання-запит готове" } }
+      }
+    },
+    "Label · shown to the submitter" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Étiquette · visible par le déposant" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Назва · видно тому, хто надсилає" } }
+      }
+    },
+    "1 submission, then the link closes." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "1 envoi, puis le lien se ferme." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "1 надходження, потім посилання закривається." } }
+      }
+    },
+    "creating…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "création…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "створення…" } }
+      }
+    },
+    "create request link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "créer le lien de demande" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "створити посилання-запит" } }
+      }
+    },
+    "Anyone with this link can send you one encrypted submission." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Toute personne disposant de ce lien peut vous envoyer un envoi chiffré." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Будь-хто з цим посиланням може надіслати вам одне зашифроване надходження." } }
+      }
+    },
+    "Request link · keyless" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lien de demande · sans clé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання-запит · без ключа" } }
+      }
+    },
+    "Copied to clipboard." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Copié dans le presse-papiers." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Скопійовано в буфер обміну." } }
+      }
+    },
+    "create another" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "en créer un autre" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "створити ще одне" } }
+      }
+    },
+    "done" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "terminé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "готово" } }
+      }
+    },
+    "share…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "partager…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "поділитися…" } }
+      }
+    },
+    "revoke now" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "révoquer maintenant" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкликати зараз" } }
+      }
+    },
+    "BURNS WHEN" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "DÉTRUIT QUAND" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ЗНИЩУЄТЬСЯ КОЛИ" } }
+      }
+    },
+    "· opened up to its max · or it expires · or 10 wrong passphrases" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "· ouvert jusqu’à son maximum · ou il expire · ou 10 phrases secrètes erronées" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "· відкрито до максимуму · або закінчується термін · або 10 невірних парольних фраз" } }
+      }
+    },
+    "sealed · key in url fragment only" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "scellé · clé uniquement dans le fragment d’URL" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "запечатано · ключ лише у фрагменті URL" } }
+      }
+    },
+    "Links carry the decryption key in the URL fragment, which only exists on the device that created the share. You can still inspect or revoke it here." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Les liens portent la clé de déchiffrement dans le fragment d’URL, qui n’existe que sur l’appareil ayant créé le partage. Vous pouvez toujours l’inspecter ou le révoquer ici." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Посилання несуть ключ розшифрування у фрагменті URL, який існує лише на пристрої, що створив надсилання. Ви все одно можете переглянути чи відкликати його тут." } }
+      }
+    },
+    "SEAL & SHARE" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "SCELLER ET PARTAGER" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ЗАПЕЧАТАТИ ТА НАДІСЛАТИ" } }
+      }
+    },
+    "clipboard" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "presse-papiers" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "буфер обміну" } }
+      }
+    },
+    "✓ link copied" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "✓ lien copié" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "✓ посилання скопійовано" } }
+      }
+    },
+    "⏎ seal & copy link" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "⏎ sceller et copier le lien" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "⏎ запечатати та копіювати посилання" } }
+      }
+    },
+    "esc  cancel" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "échap  annuler" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "esc  скасувати" } }
+      }
+    },
+    "✓ COPIED" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "✓ COPIÉ" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "✓ СКОПІЙОВАНО" } }
+      }
+    },
+    "⧉ COPY" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "⧉ COPIER" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "⧉ КОПІЮВАТИ" } }
+      }
+    },
+    "Biometric/password unlock isn't available on this Mac." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Le déverrouillage biométrique ou par mot de passe n’est pas disponible sur ce Mac." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Біометричне розблокування або за паролем недоступне на цьому Mac." } }
+      }
+    },
+    "Clipboard is empty — copy some text first." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Le presse-papiers est vide — copiez d’abord du texte." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Буфер обміну порожній — спершу скопіюйте текст." } }
+      }
+    },
+    "Clipboard text is too large (1 MiB max). Use a file share instead." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Le texte du presse-papiers est trop volumineux (1 Mio max). Utilisez plutôt un partage de fichier." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Текст у буфері завеликий (макс. 1 МіБ). Скористайтеся натомість надсиланням файлу." } }
+      }
+    },
+    "Locked — unlock the app first." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Verrouillé — déverrouillez d’abord l’app." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Заблоковано — спершу розблокуйте застосунок." } }
+      }
+    },
+    "Not authenticated." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Non authentifié." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Не автентифіковано." } }
+      }
+    },
+    "Token rejected. Mint a fresh one at /app/tokens." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Jeton refusé. Générez-en un nouveau sur /app/tokens." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Токен відхилено. Створіть новий на /app/tokens." } }
+      }
+    },
+    "General" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Général" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Загальні" } }
+      }
+    },
+    "Sharing" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Partage" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надсилання" } }
+      }
+    },
+    "Startup" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Démarrage" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Запуск" } }
+      }
+    },
+    "Start at login" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lancer à l’ouverture de session" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Запускати під час входу" } }
+      }
+    },
+    "open Linkrypt when you sign in to your Mac" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ouvrir Linkrypt quand vous ouvrez une session sur votre Mac" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкривати Linkrypt, коли ви входите в систему на Mac" } }
+      }
+    },
+    "Waiting for your approval in System Settings › General › Login Items." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "En attente de votre approbation dans Réglages Système › Général › Éléments d’ouverture." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Очікує вашого схвалення в Системних параметрах › Основні › Елементи входу." } }
+      }
+    },
+    "open login items" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ouvrir les éléments d’ouverture" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкрити елементи входу" } }
+      }
+    },
+    "Launch hidden" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Lancer masqué" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Запускати приховано" } }
+      }
+    },
+    "start in the menu bar only; open the dashboard from there" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "démarrer uniquement dans la barre des menus ; ouvrir le tableau de bord depuis là" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "запускатися лише в рядку меню; панель відкривайте звідти" } }
+      }
+    },
+    "Login-item changes need a stable app location (e.g. /Applications). Launch hidden applies from the next start." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "L’élément d’ouverture nécessite un emplacement d’app stable (p. ex. /Applications). « Lancer masqué » s’applique au prochain démarrage." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Для елемента входу потрібне стале розташування застосунку (напр. /Applications). «Запускати приховано» діє з наступного запуску." } }
+      }
+    },
+    "Dock & hotkey" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Dock et raccourci" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Dock і гаряча клавіша" } }
+      }
+    },
+    "Show in Dock" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Afficher dans le Dock" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Показувати в Dock" } }
+      }
+    },
+    "off = menu-bar utility (no Dock icon, no app menu)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "désactivé = utilitaire de barre des menus (pas d’icône Dock, pas de menu d’app)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "вимкнено = утиліта рядка меню (без піктограми в Dock і меню застосунку)" } }
+      }
+    },
+    "Global hotkey ⌥⇧V" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Raccourci global ⌥⇧V" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Глобальна гаряча клавіша ⌥⇧V" } }
+      }
+    },
+    "seal the clipboard from any app" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "sceller le presse-papiers depuis n’importe quelle app" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "шифрувати буфер обміну з будь-якого застосунку" } }
+      }
+    },
+    "Quick share" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Partage rapide" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Швидке надсилання" } }
+      }
+    },
+    "Defaults for ⌥⇧V and the menu-bar “Encrypt clipboard now”." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Valeurs par défaut pour ⌥⇧V et « Chiffrer le presse-papiers » dans la barre des menus." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Типові значення для ⌥⇧V і «Зашифрувати буфер обміну» в рядку меню." } }
+      }
+    },
+    "1 open" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "1 ouverture" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "1 відкриття" } }
+      }
+    },
+    "%lld opens" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%lld ouvertures" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%lld відкриттів" } }
+      }
+    },
+    "%@ · 1 open · auto-burn" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ · 1 ouverture · autodestruction" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%@ · 1 відкриття · автознищення" } }
+      }
+    },
+    "%@ · %lld opens · auto-burn" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ · %lld ouvertures · autodestruction" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%@ · %lld відкриттів · автознищення" } }
+      }
+    },
+    "Settings" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Réglages" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Налаштування" } }
+      }
+    },
+    "About" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "À propos" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Про застосунок" } }
+      }
+    },
+    "About Linkrypt" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "À propos de Linkrypt" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Про Linkrypt" } }
+      }
+    },
+    "End-to-end encrypted sharing. By the link." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Partage chiffré de bout en bout. Par le lien." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Наскрізне шифрування для обміну. За посиланням." } }
+      }
+    },
+    "build" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "build" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "збірка" } }
+      }
+    },
+    "links" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "liens" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "посилання" } }
+      }
+    },
+    "acknowledgements" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "remerciements" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "подяки" } }
+      }
+    },
+    "version" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "version" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "версія" } }
+      }
+    },
+    "copyright" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "copyright" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "авторське право" } }
+      }
+    },
+    "unavailable" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "indisponible" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "недоступно" } }
+      }
+    },
+    "Privacy" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Confidentialité" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Конфіденційність" } }
+      }
+    },
+    "Terms" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Conditions" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Умови" } }
+      }
+    },
+    "SIL Open Font License 1.1" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "licence SIL Open Font 1.1" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ліцензія SIL Open Font 1.1" } }
+      }
+    },
+    "Argon2 reference implementation (PHC)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "implémentation de référence Argon2 (PHC)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "еталонна реалізація Argon2 (PHC)" } }
+      }
+    },
+    "⧉ COPY BUILD INFO" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "⧉ COPIER LES INFOS DE BUILD" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "⧉ КОПІЮВАТИ ІНФО ПРО ЗБІРКУ" } }
+      }
+    },
+    "1h" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "1 h" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "1 год" } }
+      }
+    },
+    "24h" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "24 h" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "24 год" } }
+      }
+    },
+    "7d" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "7 j" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "7 дн" } }
+      }
+    },
+    "Locked" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Verrouillé" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Заблоковано" } }
+      }
+    },
+    "Unlock from the main window to change settings." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Déverrouillez depuis la fenêtre principale pour modifier les réglages." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Розблокуйте в головному вікні, щоб змінити налаштування." } }
+      }
+    },
+    "open the app" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ouvrir l’app" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "відкрити застосунок" } }
+      }
+    },
+    "× Couldn't register ⌥⇧V — another app may already use that shortcut." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "× Impossible d’enregistrer ⌥⇧V — une autre app utilise peut-être déjà ce raccourci." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "× Не вдалося зареєструвати ⌥⇧V — можливо, інший застосунок уже використовує це сполучення." } }
+      }
+    }
+  },
+  "version" : "1.0"
+}

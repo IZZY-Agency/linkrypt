@@ -1,0 +1,44 @@
+name: Linkrypt
+options:
+  bundleIdPrefix: sh.linkrypt
+  deploymentTarget:
+    macOS: "15.0"
+packages:
+  LinkryptCore:
+    path: ../LinkryptCore
+targets:
+  Linkrypt:
+    type: application
+    platform: macOS
+    sources:
+      - path: Linkrypt
+        excludes:
+          - "Resources/JetBrainsMono-OFL.txt"   # license text ships with the source, not the bundle
+    resources:
+      - path: Linkrypt/Resources
+        excludes:
+          - "JetBrainsMono-OFL.txt"
+    dependencies:
+      - package: LinkryptCore
+        product: LinkryptCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: sh.linkrypt.mac
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "4"
+        ENABLE_HARDENED_RUNTIME: YES          # required for notarization
+        ENABLE_APP_SANDBOX: NO
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_FILE: Info.partial.plist   # merged in: document types + ATSApplicationFontsPath
+        INFOPLIST_KEY_LSUIElement: NO
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        # Developer ID signing (IZZY Agency team) for every configuration. A
+        # stable team-anchored signature keeps the Keychain "Always Allow"
+        # grants across rebuilds (an ad-hoc signature changes on every build). Distribution builds go
+        # through apps/macos/scripts/release.sh (archive → export → notarize).
+        # No cert on this machine? Override on the command line:
+        #   xcodebuild … CODE_SIGN_IDENTITY=- DEVELOPMENT_TEAM=
+        DEVELOPMENT_TEAM: VHZR49D9QB
+        CODE_SIGN_STYLE: Manual
+        CODE_SIGN_IDENTITY: "Developer ID Application"
+        SWIFT_VERSION: "6.0"

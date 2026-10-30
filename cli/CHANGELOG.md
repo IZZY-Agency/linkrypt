@@ -2,6 +2,15 @@
 
 All notable changes to the linkrypt CLI. Releases are tagged `cli-v<version>`.
 
+## 1.0.1
+
+### Security
+
+- Updated the TLS stack to fix published advisories: rustls 0.23.46
+  (RUSTSEC-2026-0285, -0346, -0347, -0348, -0349), rustls-webpki 0.103.16
+  (RUSTSEC-2026-0382) and webpki-roots 1.0.10 (RUSTSEC-2026-0381).
+- Updated ctutils to 0.4.4 (RUSTSEC-2026-0385), used by the crypto libraries.
+
 ## 1.0.0
 
 First public release. The source now lives at

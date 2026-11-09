@@ -90,7 +90,7 @@ struct LinkryptApp: App {
                 // Wire dock-drop delivery once the model is live; flushes any
                 // file dropped during cold launch.
                 appDelegate.dropBuffer.onReady { [model] urls in
-                    model.receiveDroppedFile(urls.first)
+                    model.receiveDroppedFiles(urls)
                 }
             }
         }

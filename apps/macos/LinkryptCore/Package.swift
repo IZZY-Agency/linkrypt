@@ -24,6 +24,6 @@ let package = Package(
             name: "LinkryptCore",
             dependencies: [.product(name: "Argon2Swift", package: "Argon2Swift")]
         ),
-        .testTarget(name: "LinkryptCoreTests", dependencies: ["LinkryptCore"]),
+        .testTarget(name: "LinkryptCoreTests", dependencies: ["LinkryptCore"], exclude: ["Fixtures"]),
     ]
 )

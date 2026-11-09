@@ -21,6 +21,8 @@
 		4DA4F7289FDA8AC27D8F9D06 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2C2A6B86F096BE78731E1A9 /* SettingsView.swift */; };
 		4FA24DBFA9DD6A01498F9D61 /* NewRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C38F34B4CD7A0F77E62120 /* NewRequestView.swift */; };
 		59E517ED233C99345E3E2862 /* ReceiveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578D175DC03504F874F796D /* ReceiveModel.swift */; };
+		65E3880D1A262EA5F93EEA09 /* FileDropDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC912140A919395279546EC4 /* FileDropDelegate.swift */; };
+		6CE3F3A76DCEEF80AEDBC916 /* PlainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7DA4FAA4F81061E3401346 /* PlainTextField.swift */; };
 		6D5EC547DF4D49D4B3D05289 /* RespondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D9BBD25653C08BDAFC9565 /* RespondView.swift */; };
 		872C339DD3E21DAAC72D940B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066342655F762A3CAD69064F /* AppDelegate.swift */; };
 		8D1718A153E79553461766C2 /* RespondModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB3E9652DAA28E47535E4CC /* RespondModel.swift */; };
@@ -28,6 +30,7 @@
 		9775D103FF8E926D725A42F1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E732AB07C1A048728F75B1E /* LoginView.swift */; };
 		A558C25DBF165C9E130356AA /* GlobalHotkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BBA81DE459830D93A891AD9 /* GlobalHotkey.swift */; };
 		A77E3AFB80552E5BAC545D31 /* MenuBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80206C0F3B1138582AF53C60 /* MenuBarView.swift */; };
+		ACC7EA0F79C88504DC724E88 /* SecretTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B0BD2BD9DFC28EDF3489C8 /* SecretTextEditor.swift */; };
 		B7101A26D7C6978EEB9E2ABF /* HotkeyOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4543CED7E072716A0D63894 /* HotkeyOverlay.swift */; };
 		B8B56835E38491B095D5C3EE /* ReceiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292A7855E52C947FB5D7B5BF /* ReceiveView.swift */; };
 		D2AFE36FCE183B03C0702E7A /* JetBrainsMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51519F1527806685189416BC /* JetBrainsMono-Bold.ttf */; };
@@ -41,6 +44,7 @@
 		E6D2397E421E47D3161373F1 /* ComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6190429CBE9B86DC0A504E7 /* ComposerView.swift */; };
 		ED98EE1B898C83881295BC3C /* LoginItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A8FEAFD2CFA7923637C70E /* LoginItem.swift */; };
 		F290C84BF9D8FB2ADE4258AF /* AppLock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 414CCEDC41704A0946D2811F /* AppLock.swift */; };
+		F48E29FC8CE311CDC275A961 /* PassphraseField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEA62A64BE32F596CD470D1 /* PassphraseField.swift */; };
 		F4D1C377CE14A918B9F1EA02 /* LinkryptApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12371E369DCA14BD32819C82 /* LinkryptApp.swift */; };
 		FAB3443DE251D107467E1E0A /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD79261B8CFD23A02A79DD48 /* DashboardView.swift */; };
 /* End PBXBuildFile section */
@@ -63,11 +67,14 @@
 		53877E7A3F82E8AA83B1168A /* ShareDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDetailView.swift; sourceTree = "<group>"; };
 		5471A51C767CF74BD1D1562C /* Linkrypt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Linkrypt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61753D41BF79B55E56D10152 /* LKComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LKComponents.swift; sourceTree = "<group>"; };
+		61B0BD2BD9DFC28EDF3489C8 /* SecretTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretTextEditor.swift; sourceTree = "<group>"; };
 		66A36824F056BF51E479820C /* RequestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsView.swift; sourceTree = "<group>"; };
 		6827E759F0B93988918C78D1 /* InboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxView.swift; sourceTree = "<group>"; };
+		6DEA62A64BE32F596CD470D1 /* PassphraseField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassphraseField.swift; sourceTree = "<group>"; };
 		76090B9C5EB28A6902CE76DE /* JetBrainsMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Regular.ttf"; sourceTree = "<group>"; };
 		80206C0F3B1138582AF53C60 /* MenuBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarView.swift; sourceTree = "<group>"; };
 		86A8FEAFD2CFA7923637C70E /* LoginItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginItem.swift; sourceTree = "<group>"; };
+		8F7DA4FAA4F81061E3401346 /* PlainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainTextField.swift; sourceTree = "<group>"; };
 		A2AB0297F4AD7402263B3198 /* DockIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DockIcon.swift; sourceTree = "<group>"; };
 		A2C2A6B86F096BE78731E1A9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A6190429CBE9B86DC0A504E7 /* ComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerView.swift; sourceTree = "<group>"; };
@@ -77,6 +84,7 @@
 		C194A96792C4C6DC9731EC16 /* JetBrainsMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "JetBrainsMono-Medium.ttf"; sourceTree = "<group>"; };
 		C75B257AAD5FA205C988002E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		CF3A64B3040676A6E54F2A13 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
+		DC912140A919395279546EC4 /* FileDropDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDropDelegate.swift; sourceTree = "<group>"; };
 		DD7ED91CE67FA594319B1E5D /* InboxModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxModel.swift; sourceTree = "<group>"; };
 		E2C0D2372153BC839F6D53D1 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		F4543CED7E072716A0D63894 /* HotkeyOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotkeyOverlay.swift; sourceTree = "<group>"; };
@@ -139,6 +147,10 @@
 			isa = PBXGroup;
 			children = (
 				A6190429CBE9B86DC0A504E7 /* ComposerView.swift */,
+				DC912140A919395279546EC4 /* FileDropDelegate.swift */,
+				6DEA62A64BE32F596CD470D1 /* PassphraseField.swift */,
+				8F7DA4FAA4F81061E3401346 /* PlainTextField.swift */,
+				61B0BD2BD9DFC28EDF3489C8 /* SecretTextEditor.swift */,
 			);
 			path = Composer;
 			sourceTree = "<group>";
@@ -382,6 +394,7 @@
 				E6D2397E421E47D3161373F1 /* ComposerView.swift in Sources */,
 				FAB3443DE251D107467E1E0A /* DashboardView.swift in Sources */,
 				072410950F50BBD4F9F112D2 /* DockIcon.swift in Sources */,
+				65E3880D1A262EA5F93EEA09 /* FileDropDelegate.swift in Sources */,
 				A558C25DBF165C9E130356AA /* GlobalHotkey.swift in Sources */,
 				B7101A26D7C6978EEB9E2ABF /* HotkeyOverlay.swift in Sources */,
 				47325477E1E657A9898F3331 /* HotkeyRegistration.swift in Sources */,
@@ -396,12 +409,15 @@
 				D5DAA97A4D45A0A91700BCB5 /* MainWindow.swift in Sources */,
 				A77E3AFB80552E5BAC545D31 /* MenuBarView.swift in Sources */,
 				4FA24DBFA9DD6A01498F9D61 /* NewRequestView.swift in Sources */,
+				F48E29FC8CE311CDC275A961 /* PassphraseField.swift in Sources */,
+				6CE3F3A76DCEEF80AEDBC916 /* PlainTextField.swift in Sources */,
 				DE13FA166B4DCD100EC1D9C5 /* Preferences.swift in Sources */,
 				59E517ED233C99345E3E2862 /* ReceiveModel.swift in Sources */,
 				B8B56835E38491B095D5C3EE /* ReceiveView.swift in Sources */,
 				03FCA74C82448193AEB60585 /* RequestsView.swift in Sources */,
 				8D1718A153E79553461766C2 /* RespondModel.swift in Sources */,
 				6D5EC547DF4D49D4B3D05289 /* RespondView.swift in Sources */,
+				ACC7EA0F79C88504DC724E88 /* SecretTextEditor.swift in Sources */,
 				4DA4F7289FDA8AC27D8F9D06 /* SettingsView.swift in Sources */,
 				E345E0C599EFE0FAC6007EAB /* ShareDetailView.swift in Sources */,
 			);
@@ -536,7 +552,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = VHZR49D9QB;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -548,7 +564,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sh.linkrypt.mac;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 6.0;
@@ -562,7 +578,7 @@
 				CODE_SIGN_IDENTITY = "Developer ID Application";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = VHZR49D9QB;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -574,7 +590,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = sh.linkrypt.mac;
 				SDKROOT = macosx;
 				SWIFT_VERSION = 6.0;

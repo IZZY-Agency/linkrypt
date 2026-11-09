@@ -7,7 +7,7 @@ struct DashboardView: View {
     @Environment(AppLock.self) private var lock
     @Environment(\.openSettings) private var openSettings
     @Environment(\.openWindow) private var openWindow
-    struct ComposerLaunch: Identifiable { let id = UUID(); let initialFile: URL? }
+    struct ComposerLaunch: Identifiable { let id = UUID(); let initialFiles: [URL] }
     @State private var composerLaunch: ComposerLaunch?
     /// A share the composer just created. Stashed in `pendingCreated` while the
     /// composer sheet animates out, then moved to `createdShare` in its
@@ -56,7 +56,7 @@ struct DashboardView: View {
             if !locked { Task { await model.refresh() } }
         }
         .task { tryConsumeDrop(); tryConsumeNewShare() }
-        .onChange(of: model.pendingDroppedFile) { _, _ in tryConsumeDrop() }
+        .onChange(of: model.pendingDroppedFiles) { _, _ in tryConsumeDrop() }
         .onChange(of: model.pendingNewShare) { _, _ in tryConsumeNewShare() }
         .onChange(of: composerLaunch?.id) { _, _ in tryConsumeDrop() }
         .onChange(of: createdShare?.id) { _, _ in tryConsumeDrop() }
@@ -68,7 +68,7 @@ struct DashboardView: View {
         .sheet(item: $composerLaunch, onDismiss: {
             if let c = pendingCreated { pendingCreated = nil; createdShare = c }
         }) { launch in
-            ComposerView(initialFile: launch.initialFile, onCreated: { id, url, warning in
+            ComposerView(initialFiles: launch.initialFiles, onCreated: { id, url, warning in
                 pendingCreated = CreatedShare(id: id, url: url, warning: warning)
             })
             .environment(model)
@@ -98,7 +98,7 @@ struct DashboardView: View {
 
     /// Open the composer for a dock-dropped file — only when idle (no sheet
     /// already up), so a drop arriving during another sheet is held in
-    /// `pendingDroppedFile` and consumed when that sheet dismisses.
+    /// `pendingDroppedFiles` and consumed when that sheet dismisses.
     /// No sheet up — the only state in which a new sheet can be presented.
     private var isIdle: Bool {
         composerLaunch == nil && createdShare == nil && detailRow == nil
@@ -106,9 +106,10 @@ struct DashboardView: View {
     }
 
     private func tryConsumeDrop() {
-        guard let url = model.pendingDroppedFile, isIdle else { return }
-        model.pendingDroppedFile = nil
-        composerLaunch = ComposerLaunch(initialFile: url)
+        guard !model.pendingDroppedFiles.isEmpty, isIdle else { return }
+        let urls = model.pendingDroppedFiles
+        model.pendingDroppedFiles = []
+        composerLaunch = ComposerLaunch(initialFiles: urls)
     }
 
     /// ⌘N while a sheet is already up is dropped, not queued — opening the
@@ -117,7 +118,7 @@ struct DashboardView: View {
         guard model.pendingNewShare else { return }
         model.pendingNewShare = false
         guard isIdle else { return }
-        composerLaunch = ComposerLaunch(initialFile: nil)
+        composerLaunch = ComposerLaunch(initialFiles: [])
     }
 
     private var sidebar: some View {
@@ -129,7 +130,7 @@ struct DashboardView: View {
             navItem("Requests", hint: "g r", active: workspace == .requests, count: model.requests.count) { workspace = .requests }
 
             sectionHeader("OUTGOING")
-            navItem("New share", hint: "g n") { composerLaunch = ComposerLaunch(initialFile: nil) }
+            navItem("New share", hint: "g n") { composerLaunch = ComposerLaunch(initialFiles: []) }
             navItem("New request", hint: "g N") { showNewRequest = true }
 
             sectionHeader("INCOMING")
@@ -252,7 +253,7 @@ struct DashboardView: View {
                     + Text("\(counts.closed) closed").font(LK.sans(15)).foregroundStyle(LK.fgMuted)
                 }
                 Spacer()
-                LKButton(title: "+ new share", primary: true, arrow: true) { composerLaunch = ComposerLaunch(initialFile: nil) }
+                LKButton(title: "+ new share", primary: true, arrow: true) { composerLaunch = ComposerLaunch(initialFiles: []) }
             }
             // filter strip
             HStack(spacing: 8) {
@@ -521,7 +522,7 @@ struct DashboardView: View {
         switch action {
         case .shares: workspace = .shares
         case .requests: workspace = .requests
-        case .newShare: composerLaunch = ComposerLaunch(initialFile: nil)
+        case .newShare: composerLaunch = ComposerLaunch(initialFiles: [])
         case .newRequest: showNewRequest = true
         case .openShare: showReceive = true
         case .answerRequest: showRespond = true

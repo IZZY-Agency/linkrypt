@@ -535,22 +535,10 @@
         "uk" : { "stringUnit" : { "state" : "translated", "value" : "завантажити файл…" } }
       }
     },
-    "File · encrypted on device" : {
+    "Load File" : {
       "localizations" : {
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Fichier · chiffré sur l’appareil" } },
-        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Файл · зашифровано на пристрої" } }
-      }
-    },
-    "no file chosen" : {
-      "localizations" : {
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "aucun fichier choisi" } },
-        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файл не обрано" } }
-      }
-    },
-    "choose…" : {
-      "localizations" : {
-        "fr" : { "stringUnit" : { "state" : "translated", "value" : "choisir…" } },
-        "uk" : { "stringUnit" : { "state" : "translated", "value" : "обрати…" } }
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Charger le fichier" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Завантажити файл" } }
       }
     },
     "Label · sent to recipient" : {
@@ -1559,6 +1547,210 @@
       "localizations" : {
         "fr" : { "stringUnit" : { "state" : "translated", "value" : "× Impossible d’enregistrer ⌥⇧V — une autre app utilise peut-être déjà ce raccourci." } },
         "uk" : { "stringUnit" : { "state" : "translated", "value" : "× Не вдалося зареєструвати ⌥⇧V — можливо, інший застосунок уже використовує це сполучення." } }
+      }
+    },
+    "Files · encrypted on device" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Fichiers · chiffrés sur l’appareil" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Файли · шифруються на пристрої" } }
+      }
+    },
+    "no files chosen" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "aucun fichier choisi" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файли не вибрано" } }
+      }
+    },
+    "add files…" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ajouter des fichiers…" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "додати файли…" } }
+      }
+    },
+    "or drop files on this window" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ou déposez des fichiers sur cette fenêtre" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "або перетягніть файли на це вікно" } }
+      }
+    },
+    "clear all" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "tout retirer" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "очистити все" } }
+      }
+    },
+    "remove %@" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "retirer %@" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "прибрати %@" } }
+      }
+    },
+    "of %@" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "sur %@" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "з %@" } }
+      }
+    },
+    "folders aren't supported — drop the files inside" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "les dossiers ne sont pas pris en charge — déposez les fichiers qu’ils contiennent" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "папки не підтримуються — перетягніть файли з них" } }
+      }
+    },
+    "can't share %@" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "impossible de partager %@" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "не вдається поширити %@" } }
+      }
+    },
+    "too many files (max 100 per share)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "trop de fichiers (100 maximum par partage)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "забагато файлів (максимум 100 на поширення)" } }
+      }
+    },
+    "files are too large together (%@; your plan allows %@)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "fichiers trop volumineux ensemble (%1$@ ; votre offre permet %2$@)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файли разом завеликі (%1$@; ваш план дозволяє %2$@)" } }
+      }
+    },
+    "files are too large together (max 1 GB per share)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "fichiers trop volumineux ensemble (1 Go maximum par partage)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файли разом завеликі (максимум 1 ГБ на поширення)" } }
+      }
+    },
+    "file too large (%@; your plan allows %@)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "fichier trop volumineux (%1$@ ; votre offre permet %2$@)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файл завеликий (%1$@; ваш план дозволяє %2$@)" } }
+      }
+    },
+    "a file changed after you picked it — remove it and add it again" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "un fichier a changé après sa sélection — retirez-le puis ajoutez-le de nouveau" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файл змінився після вибору — приберіть його й додайте знову" } }
+      }
+    },
+    "a file can no longer be read — remove it and add it again" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "un fichier n’est plus lisible — retirez-le puis ajoutez-le de nouveau" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файл більше не читається — приберіть його й додайте знову" } }
+      }
+    },
+    "Sent as one encrypted %@. File names are encrypted too." : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "Envoyé comme un seul %@ chiffré. Les noms de fichiers sont aussi chiffrés." } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "Надсилається одним зашифрованим %@. Назви файлів теж зашифровані." } }
+      }
+    },
+    "%lld files" : {
+      "localizations" : {
+        "en" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld file" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld files" } }
+          } } },
+        "fr" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld fichier" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld fichiers" } }
+          } } },
+        "uk" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "%lld файл" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "%lld файла" } },
+            "few" : { "stringUnit" : { "state" : "translated", "value" : "%lld файли" } },
+            "many" : { "stringUnit" : { "state" : "translated", "value" : "%lld файлів" } }
+          } } }
+      }
+    },
+    "your plan is still loading — try again in a moment" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "votre offre est en cours de chargement — réessayez dans un instant" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "ваш план ще завантажується — спробуйте за мить" } }
+      }
+    },
+    "file too large (max 4 GB per share)" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "fichier trop volumineux (4 Go maximum par partage)" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "файл завеликий (максимум 4 ГБ на поширення)" } }
+      }
+    },
+    "adding files — try again in a moment" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "ajout des fichiers — réessayez dans un instant" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "додаємо файли — спробуйте за мить" } }
+      }
+    },
+    "couldn't add %lld files while sending" : {
+      "localizations" : {
+        "en" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "couldn't add %lld file while sending" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "couldn't add %lld files while sending" } }
+          } } },
+        "fr" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "impossible d’ajouter %lld fichier pendant l’envoi" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "impossible d’ajouter %lld fichiers pendant l’envoi" } }
+          } } },
+        "uk" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld файл під час надсилання" } },
+            "few" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld файли під час надсилання" } },
+            "many" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld файлів під час надсилання" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld файла під час надсилання" } }
+          } } }
+      }
+    },
+    "couldn't add %lld items" : {
+      "localizations" : {
+        "en" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "couldn't add %lld item" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "couldn't add %lld items" } }
+          } } },
+        "fr" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "impossible d’ajouter %lld élément" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "impossible d’ajouter %lld éléments" } }
+          } } },
+        "uk" : { "variations" : { "plural" : {
+            "one" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld елемент" } },
+            "few" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld елементи" } },
+            "many" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld елементів" } },
+            "other" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося додати %lld елемента" } }
+          } } }
+      }
+    },
+    "couldn't pack these files — remove the last added file and try again" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "impossible d’empaqueter ces fichiers — retirez le dernier fichier ajouté et réessayez" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "не вдалося запакувати ці файли — приберіть останній доданий файл і спробуйте знову" } }
+      }
+    },
+    "recipient email" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "e-mail du destinataire" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "email отримувача" } }
+      }
+    },
+    "%@ B" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ o" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%@ Б" } }
+      }
+    },
+    "%@ KB" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ Ko" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%@ КБ" } }
+      }
+    },
+    "%@ MB" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ Mo" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%@ МБ" } }
+      }
+    },
+    "%@ GB" : {
+      "localizations" : {
+        "fr" : { "stringUnit" : { "state" : "translated", "value" : "%@ Go" } },
+        "uk" : { "stringUnit" : { "state" : "translated", "value" : "%@ ГБ" } }
       }
     }
   },

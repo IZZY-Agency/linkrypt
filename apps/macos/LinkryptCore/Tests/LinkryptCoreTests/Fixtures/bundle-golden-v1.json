@@ -1,0 +1,425 @@
+{
+  "format": "linkrypt-bundle/1",
+  "bundles": [
+    {
+      "id": "three-entries",
+      "entries": [
+        {
+          "name": "notes.txt",
+          "dataHex": "68656c6c6f206c696e6b727970740a",
+          "dosTime": 42290,
+          "dosDate": 23913
+        },
+        {
+          "name": "\u0437\u0432\u0456\u0442.pdf",
+          "dataHex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+          "dosTime": 0,
+          "dosDate": 33
+        },
+        {
+          "name": "empty.bin",
+          "dataHex": "",
+          "dosTime": 49021,
+          "dosDate": 65439
+        }
+      ],
+      "expectedHex": "504b030414000008000032a5695dc12861c10f0000000f000000090000006e6f7465732e74787468656c6c6f206c696e6b727970740a504b030414000008000000002100738c052900010000000100000c000000d0b7d0b2d196d1822e706466000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff504b03041400000800007dbf9fff00000000000000000000000009000000656d7074792e62696e504b01021e0314000008000032a5695dc12861c10f0000000f000000090000000000000000000000a481000000006e6f7465732e747874504b01021e0314000008000000002100738c052900010000000100000c0000000000000000000000a48136000000d0b7d0b2d196d1822e706466504b01021e031400000800007dbf9fff000000000000000000000000090000000000000000000000a48160010000656d7074792e62696e504b05060000000003000300a80000008701000011006c696e6b727970742d62756e646c652f31"
+    },
+    {
+      "id": "two-same-stem",
+      "entries": [
+        {
+          "name": "a.txt",
+          "dataHex": "41",
+          "dosTime": 0,
+          "dosDate": 33
+        },
+        {
+          "name": "a (2).txt",
+          "dataHex": "42",
+          "dosTime": 0,
+          "dosDate": 33
+        }
+      ],
+      "expectedHex": "504b0304140000080000000021008b9ed9d3010000000100000005000000612e74787441504b03041400000800000000210031cfd04a01000000010000000900000061202832292e74787442504b01021e03140000080000000021008b9ed9d30100000001000000050000000000000000000000a48100000000612e747874504b01021e031400000800000000210031cfd04a0100000001000000090000000000000000000000a4812400000061202832292e747874504b050600000000020002006a0000004c00000011006c696e6b727970742d62756e646c652f31"
+    }
+  ],
+  "canonicalName": [
+    {
+      "in": "report.pdf",
+      "out": "report.pdf"
+    },
+    {
+      "in": "a\u0000b\u001fc\u007f.txt",
+      "out": "abc.txt"
+    },
+    {
+      "in": "evil\u202etxt.exe",
+      "out": "eviltxt.exe"
+    },
+    {
+      "in": "e\u202e\u0301.txt",
+      "out": "\u00e9.txt"
+    },
+    {
+      "in": "\u00a0x.txt\u3000",
+      "out": "x.txt"
+    },
+    {
+      "in": "\ufeffbom.txt",
+      "out": "bom.txt"
+    },
+    {
+      "in": "\u0085y.txt",
+      "out": "y.txt"
+    },
+    {
+      "in": "z.txt\u2028",
+      "out": "z.txt"
+    },
+    {
+      "in": "dir/sub\\file.txt",
+      "out": "dirsubfile.txt"
+    },
+    {
+      "in": "what?<>:\"|*.txt",
+      "out": "what_______.txt"
+    },
+    {
+      "in": "  notes.txt. . ",
+      "out": "notes.txt"
+    },
+    {
+      "in": "CON.txt",
+      "out": "_CON.txt"
+    },
+    {
+      "in": "con",
+      "out": "_con"
+    },
+    {
+      "in": "Lpt9.tar.gz",
+      "out": "_Lpt9.tar.gz"
+    },
+    {
+      "in": "CONSOLE.txt",
+      "out": "CONSOLE.txt"
+    },
+    {
+      "in": "COM0.txt",
+      "out": "COM0.txt"
+    },
+    {
+      "in": "e\u0301te\u0301.txt",
+      "out": "\u00e9t\u00e9.txt"
+    },
+    {
+      "in": "e\u0301.txt",
+      "out": "\u00e9.txt"
+    },
+    {
+      "in": "a\u200bb\u200e\u200f\u061c\u2060.txt",
+      "out": "ab.txt"
+    },
+    {
+      "in": "x\u200dy.txt",
+      "out": "x\u200dy.txt"
+    },
+    {
+      "in": "COM\u00b9.txt",
+      "out": "_COM\u00b9.txt"
+    },
+    {
+      "in": "lpt\u00b3",
+      "out": "_lpt\u00b3"
+    },
+    {
+      "in": "CONIN$.txt",
+      "out": "_CONIN$.txt"
+    },
+    {
+      "in": "conout$",
+      "out": "_conout$"
+    },
+    {
+      "in": "CON .txt",
+      "out": "_CON .txt"
+    },
+    {
+      "in": "COM\u2074.txt",
+      "out": "COM\u2074.txt"
+    },
+    {
+      "in": "\uac00\u11a8.txt",
+      "out": "\uac01.txt"
+    },
+    {
+      "in": "x\u0f73\u0323.txt",
+      "out": "x\u0f71\u0f72\u0323.txt"
+    },
+    {
+      "in": "x\u0323\u0f73.txt",
+      "out": "x\u0f71\u0f72\u0323.txt"
+    },
+    {
+      "in": "",
+      "out": "file"
+    },
+    {
+      "in": ".",
+      "out": "file"
+    },
+    {
+      "in": "...",
+      "out": "file"
+    },
+    {
+      "in": " ",
+      "out": "file"
+    },
+    {
+      "in": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt",
+      "out": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt"
+    },
+    {
+      "in": "\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f.pdf",
+      "out": "\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f\u044f.pdf"
+    },
+    {
+      "in": "\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00.png",
+      "out": "\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00\ud83d\ude00.png"
+    },
+    {
+      "in": "a.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "out": "a.bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+    }
+  ],
+  "uniqueNames": [
+    {
+      "in": [
+        "report.pdf",
+        "Report.pdf",
+        "REPORT.PDF"
+      ],
+      "out": [
+        "report.pdf",
+        "Report (2).pdf",
+        "REPORT (3).PDF"
+      ]
+    },
+    {
+      "in": [
+        "a.txt",
+        "a (2).txt",
+        "a.txt"
+      ],
+      "out": [
+        "a.txt",
+        "a (2).txt",
+        "a (3).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u0417\u0432\u0456\u0442.pdf",
+        "\u0437\u0432\u0456\u0442.pdf"
+      ],
+      "out": [
+        "\u0417\u0432\u0456\u0442.pdf",
+        "\u0437\u0432\u0456\u0442 (2).pdf"
+      ]
+    },
+    {
+      "in": [
+        "noext",
+        "noext"
+      ],
+      "out": [
+        "noext",
+        "noext (2)"
+      ]
+    },
+    {
+      "in": [
+        "CON.txt",
+        "_CON.txt"
+      ],
+      "out": [
+        "_CON.txt",
+        "_CON (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt"
+      ],
+      "out": [
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.txt",
+        "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u039f\u0394\u039f\u03a3.txt",
+        "\u03bf\u03b4\u03bf\u03c2.txt"
+      ],
+      "out": [
+        "\u039f\u0394\u039f\u03a3.txt",
+        "\u03bf\u03b4\u03bf\u03c2 (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u03bf\u03b4\u03bf\u03c3.txt",
+        "\u03bf\u03b4\u03bf\u03c2.txt"
+      ],
+      "out": [
+        "\u03bf\u03b4\u03bf\u03c3.txt",
+        "\u03bf\u03b4\u03bf\u03c2 (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u00e9t\u00e9.txt",
+        "e\u0301te\u0301.txt"
+      ],
+      "out": [
+        "\u00e9t\u00e9.txt",
+        "\u00e9t\u00e9 (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "a.\u0301txt",
+        "A.\u0301txt"
+      ],
+      "out": [
+        "a.\u0301txt",
+        "A (2).\u0301txt"
+      ]
+    },
+    {
+      "in": [
+        "\u00df.txt",
+        "ss.txt"
+      ],
+      "out": [
+        "\u00df.txt",
+        "ss (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u017f.txt",
+        "s.txt"
+      ],
+      "out": [
+        "\u017f.txt",
+        "s (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\ufb01.txt",
+        "fi.txt"
+      ],
+      "out": [
+        "\ufb01.txt",
+        "fi (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u0130\u0316.txt",
+        "i\u0316\u0307.txt"
+      ],
+      "out": [
+        "\u0130\u0316.txt",
+        "i\u0316\u0307 (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u0131.txt",
+        "i.txt"
+      ],
+      "out": [
+        "\u0131.txt",
+        "i (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u1e9e.txt",
+        "ss.txt"
+      ],
+      "out": [
+        "\u1e9e.txt",
+        "ss (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\u1e9e.txt",
+        "\u00df.txt"
+      ],
+      "out": [
+        "\u1e9e.txt",
+        "\u00df (2).txt"
+      ]
+    },
+    {
+      "in": [
+        "\uac01.txt",
+        "\uac00\u11a8.txt"
+      ],
+      "out": [
+        "\uac01.txt",
+        "\uac01 (2).txt"
+      ]
+    }
+  ],
+  "dos": [
+    {
+      "y": 2026,
+      "mo": 11,
+      "d": 9,
+      "h": 20,
+      "mi": 41,
+      "s": 37,
+      "time": 42290,
+      "date": 23913
+    },
+    {
+      "y": 1979,
+      "mo": 12,
+      "d": 31,
+      "h": 23,
+      "mi": 59,
+      "s": 59,
+      "time": 0,
+      "date": 33
+    },
+    {
+      "y": 2200,
+      "mo": 1,
+      "d": 1,
+      "h": 0,
+      "mi": 0,
+      "s": 0,
+      "time": 49021,
+      "date": 65439
+    },
+    {
+      "y": 1980,
+      "mo": 1,
+      "d": 1,
+      "h": 0,
+      "mi": 0,
+      "s": 1,
+      "time": 0,
+      "date": 33
+    }
+  ]
+}

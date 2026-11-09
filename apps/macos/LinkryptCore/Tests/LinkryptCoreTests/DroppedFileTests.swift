@@ -39,4 +39,20 @@ final class DroppedFileTests: XCTestCase {
         try URL.writeBookmarkData(data, to: alias)   // a real Finder alias file
         XCTAssertFalse(DroppedFile.isAcceptable(alias))
     }
+
+    func testPackageDirectoryIsRejectedAsFolder() throws {
+        let pkg = tmp.appendingPathComponent("X.app")
+        try FileManager.default.createDirectory(
+            at: pkg.appendingPathComponent("Contents"), withIntermediateDirectories: true)
+        XCTAssertEqual(DroppedFile.rejectionReason(pkg), .folder)
+        XCTAssertFalse(DroppedFile.isAcceptable(pkg))
+    }
+
+    func testRejectionReasonForAliasIsUnsupported() throws {
+        let f = tmp.appendingPathComponent("real3.txt")
+        try Data("z".utf8).write(to: f)
+        let alias = tmp.appendingPathComponent("alias3.txt")
+        try URL.writeBookmarkData(try f.bookmarkData(options: .suitableForBookmarkFile), to: alias)
+        XCTAssertEqual(DroppedFile.rejectionReason(alias), .unsupported)
+    }
 }

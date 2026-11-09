@@ -9,16 +9,24 @@ import Foundation
 /// Envelope: `[0x01][big-endian uint32 original length][plaintext][zero pad]`,
 /// total length = `nextBucket(originalLen + 5)`.
 
-public enum PaddingError: Error {
+public enum PaddingError: Error, Equatable {
     case bufferTooShort
     case unsupportedVersion(UInt8)
     case declaredLengthExceedsBuffer
+    /// The plaintext is larger than `Padding.maxPlaintext`.
+    case plaintextTooLarge
 }
 
 public enum Padding {
     static let minBytes = 4 * 1024
     static let oneMiB = 1024 * 1024
     static let headerLen = 5 // version byte + uint32 length
+
+    /// Largest plaintext the envelope can carry. The length is stored as a
+    /// big-endian uint32, and the header must fit beside it, so anything larger
+    /// would be silently truncated on unpad. Callers check this before reading
+    /// a file into memory.
+    public static let maxPlaintext = 0xFFFF_FFFF - 5
 
     /// Smallest bucket ≥ `plaintextLen`: 4 KiB floor, power-of-2 up to 1 MiB,
     /// then 1 MiB steps (doubling would waste up to 50 % above 1 MiB).
@@ -32,9 +40,17 @@ public enum Padding {
         return p
     }
 
+    /// Whether a plaintext of `length` bytes fits the envelope.
+    public static func fits(_ length: Int) -> Bool {
+        length >= 0 && length <= maxPlaintext
+    }
+
     /// Wrap plaintext in the padded envelope. The result is fed to `aesGcmEncrypt`.
-    public static func pad(_ plaintext: Data) -> Data {
+    /// Throws `PaddingError.plaintextTooLarge` before touching a plaintext that
+    /// does not fit.
+    public static func pad(_ plaintext: Data) throws -> Data {
         let originalLen = plaintext.count
+        guard fits(originalLen) else { throw PaddingError.plaintextTooLarge }
         let target = nextBucket(originalLen + headerLen)
         var out = Data(count: target) // zero-initialized
         out[0] = 0x01 // version
@@ -66,6 +82,6 @@ extension Crypto {
     /// share must be created with `paddingVersion: .v1`, `size` = the returned
     /// ciphertext length, and `rawSize` = the original plaintext length.
     public static func sealPaddedV1(key: Data, iv: Data, plaintext: Data) throws -> Data {
-        try aesGcmEncrypt(key: key, iv: iv, plaintext: Padding.pad(plaintext))
+        try aesGcmEncrypt(key: key, iv: iv, plaintext: Padding.pad(plaintext))   // throws past the format cap
     }
 }

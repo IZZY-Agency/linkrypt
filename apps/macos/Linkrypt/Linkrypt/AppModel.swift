@@ -40,9 +40,9 @@ final class AppModel {
     var shares: [ShareRow] = []
     var requests: [RequestRow] = []
     var lastError: String?
-    var pendingDroppedFile: URL?     // a file dropped on the dock, awaiting the composer
+    var pendingDroppedFiles: [URL] = []   // files dropped on the dock, awaiting the composer (empty = none)
     /// ⌘N (File › New share) pressed; the dashboard consumes it and opens the
-    /// composer once it is idle. Same hand-off shape as `pendingDroppedFile`.
+    /// composer once it is idle. Same hand-off shape as `pendingDroppedFiles`.
     var pendingNewShare = false
 
     static let defaultBaseURL = "https://linkrypt.sh"
@@ -91,15 +91,15 @@ final class AppModel {
         client = nil; inboxClient = nil; submitClient = nil; who = nil; shares = []; requests = []; route = .login
     }
 
-    /// A file was dropped on the dock / opened via Finder. Stash it (if a real
-    /// readable file) for the dashboard to open in the composer. Keep-first
-    /// policy: while one drop is still pending (e.g. held behind another sheet),
-    /// ignore later drops rather than silently overwrite the first — one share
-    /// at a time.
-    func receiveDroppedFile(_ url: URL?) {
-        guard pendingDroppedFile == nil else { return }
-        guard let url, DroppedFile.isAcceptable(url) else { return }
-        pendingDroppedFile = url
+    /// Files were dropped on the dock / opened via Finder. Stash the raw URLs
+    /// for the dashboard to open in the composer, which reports anything it
+    /// cannot share (folders, aliases) instead of dropping it silently.
+    /// Keep-first policy: while a drop is still pending (e.g. held behind
+    /// another sheet), ignore later drops rather than silently overwrite the
+    /// first — one share at a time.
+    func receiveDroppedFiles(_ urls: [URL]) {
+        guard pendingDroppedFiles.isEmpty, !urls.isEmpty else { return }
+        pendingDroppedFiles = urls
     }
 
     func refresh() async {

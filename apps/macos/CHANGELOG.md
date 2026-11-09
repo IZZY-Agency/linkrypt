@@ -2,6 +2,13 @@
 
 All notable changes to Linkrypt for macOS. Versions match `MARKETING_VERSION` in `Linkrypt/project.yml`.
 
+## 1.1.0
+
+- Send several files as one encrypted link. The composer's file tab now holds a list (add files…, remove, clear all), shows the total against your plan's limit, and packs two or more files into one encrypted `linkrypt-<N>-files.zip`. File names travel inside the encryption; the server only sees the archive name. Recipients on linkrypt.sh see the files listed one by one.
+- Drag & drop: drop files anywhere on the composer window — including on the secret box and the label, recipient and passphrase fields (the files go to the list; the field is left untouched) — or drop several files on the Dock icon at once. Drops are refused while the app is locked, and Send waits until dropped files have finished loading.
+- The file-size check now follows your plan's limit instead of a fixed 100 MB; a single share is capped at 4 GB.
+- The secret box no longer offers Writing Tools, text predictions or automatic text substitutions.
+
 ## 1.0.1
 
 - About window: a new "open source" section with links to the source on

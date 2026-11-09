@@ -36,7 +36,7 @@ final class PaddingTests: XCTestCase {
 
     func testPadRoundTripsSmallText() throws {
         let plain = Data("hello, world".utf8)
-        let padded = Padding.pad(plain)
+        let padded = try Padding.pad(plain)
         XCTAssertEqual(padded.count, 4 * 1024)
         XCTAssertEqual(Array(padded)[0], 0x01) // version
         let back = try Padding.unpad(padded)
@@ -44,7 +44,7 @@ final class PaddingTests: XCTestCase {
     }
 
     func testPadRoundTripsEmpty() throws {
-        let padded = Padding.pad(Data())
+        let padded = try Padding.pad(Data())
         XCTAssertEqual(padded.count, 4 * 1024)
         let back = try Padding.unpad(padded)
         XCTAssertEqual(back.count, 0)
@@ -53,7 +53,7 @@ final class PaddingTests: XCTestCase {
     func testPadRoundTripsAtBucketBoundary() throws {
         // 4 KiB minus 5-byte header = max content for the 4 KiB bucket
         let plain = Data(repeating: 0x55, count: 4 * 1024 - 5)
-        let padded = Padding.pad(plain)
+        let padded = try Padding.pad(plain)
         XCTAssertEqual(padded.count, 4 * 1024)
         let back = try Padding.unpad(padded)
         XCTAssertEqual(back, plain)
@@ -62,7 +62,7 @@ final class PaddingTests: XCTestCase {
     func testPadRoundTripsLargerContentSixteenKiBBucket() throws {
         var plain = Data(count: 10 * 1024)
         for i in 0..<plain.count { plain[i] = UInt8(i & 0xff) }
-        let padded = Padding.pad(plain)
+        let padded = try Padding.pad(plain)
         XCTAssertEqual(padded.count, 16 * 1024)
         let back = try Padding.unpad(padded)
         XCTAssertEqual(back, plain)
@@ -70,9 +70,9 @@ final class PaddingTests: XCTestCase {
 
     // MARK: exact-byte golden — fully determines the envelope (stricter than web)
 
-    func testPadProducesExactHeaderAndZeroTail() {
+    func testPadProducesExactHeaderAndZeroTail() throws {
         let plain = Data("hello, world".utf8) // 12 bytes
-        let bytes = Array(Padding.pad(plain))
+        let bytes = Array(try Padding.pad(plain))
         XCTAssertEqual(bytes.count, 4 * 1024)
         // header: version 0x01 + big-endian uint32 length (12) + plaintext
         let expectedHead: [UInt8] = [
@@ -83,9 +83,9 @@ final class PaddingTests: XCTestCase {
         XCTAssertTrue(bytes[expectedHead.count...].allSatisfy { $0 == 0 }, "tail must be zero-filled")
     }
 
-    func testPadEncodesMultiByteLengthBigEndian() {
+    func testPadEncodesMultiByteLengthBigEndian() throws {
         let plain = Data(repeating: 0xab, count: 300) // 300 = 0x012c
-        let bytes = Array(Padding.pad(plain))
+        let bytes = Array(try Padding.pad(plain))
         XCTAssertEqual(Array(bytes[0..<5]), [0x01, 0x00, 0x00, 0x01, 0x2c])
         XCTAssertEqual(bytes.count, 4 * 1024)
     }
@@ -116,7 +116,7 @@ final class PaddingTests: XCTestCase {
         let iv = Data(repeating: 0x02, count: Crypto.ivLen)
         let plain = Data("top secret".utf8)
         let sealed = try Crypto.sealPaddedV1(key: key, iv: iv, plaintext: plain)
-        let expected = try Crypto.aesGcmEncrypt(key: key, iv: iv, plaintext: Padding.pad(plain))
+        let expected = try Crypto.aesGcmEncrypt(key: key, iv: iv, plaintext: try Padding.pad(plain))
         XCTAssertEqual(sealed, expected)
     }
 
@@ -127,11 +127,45 @@ final class PaddingTests: XCTestCase {
         XCTAssertEqual(sealed.count, 4 * 1024 + Crypto.tagLen)
     }
 
+    // MARK: format cap — the envelope stores the length in 32 bits
+
+    func testMaxPlaintextLeavesRoomForTheHeader() {
+        XCTAssertEqual(Padding.maxPlaintext, 0xFFFF_FFFF - 5)
+    }
+
+    func testFitsIsExactAtTheFormatCap() {
+        XCTAssertTrue(Padding.fits(0))
+        XCTAssertTrue(Padding.fits(Padding.maxPlaintext))
+        XCTAssertFalse(Padding.fits(Padding.maxPlaintext + 1))
+        XCTAssertFalse(Padding.fits(-1))
+    }
+
+    /// `count` bytes of address space with no access rights and no physical
+    /// memory behind them: reading a single byte would crash, so a passing test
+    /// also proves the cap is checked before the plaintext is touched.
+    private func untouchableData(count: Int) throws -> Data {
+        let p = mmap(nil, count, PROT_NONE, MAP_ANON | MAP_PRIVATE, -1, 0)
+        guard let p, p != MAP_FAILED else { throw XCTSkip("could not reserve \(count) bytes of address space") }
+        return Data(bytesNoCopy: p, count: count, deallocator: .custom { ptr, n in munmap(ptr, n) })
+    }
+
+    func testPadRejectsPlaintextOverTheCapWithoutTouchingIt() throws {
+        let huge = try untouchableData(count: Padding.maxPlaintext + 1)
+        XCTAssertThrowsError(try Padding.pad(huge)) {
+            XCTAssertEqual($0 as? PaddingError, .plaintextTooLarge)
+        }
+        let key = Data(repeating: 0x05, count: Crypto.keyLen)
+        let iv = Data(repeating: 0x06, count: Crypto.ivLen)
+        XCTAssertThrowsError(try Crypto.sealPaddedV1(key: key, iv: iv, plaintext: huge)) {
+            XCTAssertEqual($0 as? PaddingError, .plaintextTooLarge)
+        }
+    }
+
     // MARK: Data-slice safety — Swift Data subscripts are not always 0-based
 
     func testUnpadHandlesSlicedDataWithNonZeroStartIndex() throws {
         let plain = Data("sliced payload".utf8)
-        let padded = Padding.pad(plain)
+        let padded = try Padding.pad(plain)
         // Prepend bytes then drop them → a Data slice whose startIndex != 0.
         let sliced = (Data([0xff, 0xfe]) + padded).dropFirst(2)
         XCTAssertNotEqual(sliced.startIndex, 0, "precondition: slice must have non-zero startIndex")
@@ -141,20 +175,21 @@ final class PaddingTests: XCTestCase {
 
     // MARK: bucket math at the text-cap edge
     //
-    // `pad` is policy-free: it pads ANY length to the next bucket and never
-    // rejects. These assertions document WHY the text cap sits exactly at
+    // `pad` applies no share-type policy: it pads any length up to the format
+    // cap (`Padding.maxPlaintext`) to the next bucket. These assertions
+    // document WHY the text cap sits exactly at
     // 1 MiB - 5 — one more byte crosses from the 1 MiB bucket into the 2 MiB
     // bucket, which would blow the server's text payload cap. Cap *enforcement*
     // is tested separately via `Crypto.textPlaintextFitsCap`.
 
     func testPadBucketCrossesIntoTwoMiBOneByteAboveTextCap() throws {
         let maxPlain = Data(repeating: 0x7a, count: Crypto.maxTextPlaintextBytes) // 1 MiB - 5
-        let paddedMax = Padding.pad(maxPlain)
+        let paddedMax = try Padding.pad(maxPlain)
         XCTAssertEqual(paddedMax.count, 1024 * 1024) // tight fit, stays in 1 MiB bucket
         XCTAssertEqual(try Padding.unpad(paddedMax), maxPlain)
 
         let overByOne = Data(repeating: 0x7a, count: Crypto.maxTextPlaintextBytes + 1)
-        let paddedOver = Padding.pad(overByOne)
+        let paddedOver = try Padding.pad(overByOne)
         XCTAssertEqual(paddedOver.count, 2 * 1024 * 1024) // one byte over → 2 MiB bucket
         XCTAssertEqual(try Padding.unpad(paddedOver), overByOne)
     }
@@ -169,15 +204,15 @@ final class PaddingTests: XCTestCase {
 
     // MARK: max-text-plaintext ties to the server's text payload cap
 
-    func testMaxTextPlaintextPaddedAndSealedFitsServerCap() {
+    func testMaxTextPlaintextPaddedAndSealedFitsServerCap() throws {
         // The server's finalize step rejects a text ciphertext larger than
         // MAX_TEXT_PAYLOAD (1,126,400). The largest plaintext we allow, once
         // padded + GCM-tagged, must fit — mirrors web's MAX_TEXT_PLAINTEXT.
         let serverTextPayloadCap = 1_126_400
         let maxPlain = Data(count: Crypto.maxTextPlaintextBytes)
-        let sealedLen = Padding.pad(maxPlain).count + Crypto.tagLen
+        let sealedLen = try Padding.pad(maxPlain).count + Crypto.tagLen
         XCTAssertLessThanOrEqual(sealedLen, serverTextPayloadCap)
         // tight fit: it lands exactly in the 1 MiB bucket, not a larger one
-        XCTAssertEqual(Padding.pad(maxPlain).count, 1024 * 1024)
+        XCTAssertEqual(try Padding.pad(maxPlain).count, 1024 * 1024)
     }
 }
